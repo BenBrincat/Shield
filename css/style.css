@@ -14,7 +14,6 @@
   width: 1000px;
   height: 100%;
   display: block;
-  background-color: red;
   margin: 0 auto;
 }
 
@@ -45,8 +44,6 @@
   display: table-cell;
   float: left;
   padding: 0px 20px;
-
-
 }
 
 .navigation li a{
@@ -56,14 +53,13 @@
   font-size: 16px;
 }
 
-.signup-form{
-  width 300px;
+.login-form{
+  width: 300px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   background: #fff;
   padding: 20px;
   margin: 8% auto 0;
   text-align: center;
-
 }
 
 h1, h2, h3, p{
@@ -80,4 +76,24 @@ h1, h2, h3, p{
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+}
+
+.namecss{
+  padding-bottom: 10px;
+
+}
+
+.emailcss{
+  padding-bottom: 10px;
+
+}
+
+.pwdcss{
+  padding-bottom: 10px;
+
+}
+
+.roletitle{
+  padding-top: 10px;
+ padding-bottom: 10px;
 }
