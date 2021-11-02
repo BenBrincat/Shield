@@ -1,16 +1,43 @@
 <?php
-  include_once 'header.php';
+session_start();
+  include 'header.php';
+  include 'includes/database-inc.php';
 ?>
-
-  <section class= "Courses">
-    <h2>Enter a new Course </h2>
-      <form action="includes/login-inc.php" method="post">
-        <input  type="text" name="coursename" placeholder="Course name..."><br>
-        <input  type="text" name="email" placeholder="Email...">
-        <input  type="password" name="pwd" placeholder="Password...">
-        <div class="mb-1">
-		    <label class="form-label">Select User Type:</label>
-		    </div>
-        <button type="submit" name="submit">Log In</button>
-      </form>
-  </section>
+<!DOCTYPE html>
+<html>
+<title>Teacher</title>
+  <h2 class = "coursetitle"> Enter a new Course </h2>
+      <input  type="text" name="coursename" placeholder="Course name..."><br>
+      <div class="studentable">
+        <h2 class="stud ">Students</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">email</th>
+              <th scope="col">Role</th>
+            </tr>
+          </thead>
+          <?php
+          $query="SELECT * FROM users";
+          $result=mysqli_query($conn,$query);
+          while($rows=mysqli_fetch_assoc($result)) {
+          ?>
+          <?php
+          if($rows['role'] == 'student') {
+            ?>
+          <tr>
+              <td><?php echo $rows['name']; ?></td>
+              <td><?php echo $rows['email']; ?></td>
+              <td><?php echo $rows['role']; ?></td>
+          </tr>
+          <?php
+          }
+          ?>
+          <?php
+          }
+          ?>
+      </table>
+    </div>
+      <button type="submit" name="submit">Submit</button>
+</html>

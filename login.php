@@ -12,7 +12,7 @@
         <input  type="text" name="email" placeholder="Email..."><br>
         </div>
         <div class="pwdcss">
-        <input  type="password" name="pwd" placeholder="Password..."><br>
+        <input  type="password" name="password" placeholder="Password..."><br>
       </div>
         <div class="roletitle">
 		    <label class="form-label">Select User Type:</label>

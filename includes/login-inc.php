@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "database-inc.php";
-if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["pwd"]) && isset($_POST["role"]))
+if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["role"]))
 {
   function test_input($data) {
     $data = trim($data);
@@ -13,18 +13,18 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["pwd"]) && i
 
   $name = test_input($_POST["name"]);
   $email = test_input($_POST["email"]);
-  $pwd = test_input($_POST["pwd"]);
+  $password = test_input($_POST["password"]);
   $role = test_input($_POST["role"]);
 
   if (empty($name)){
     header("location: ../login.php?error=invalidname");
   } else if (empty($email)){
     header("location: ../login.php?error=invalidemail");
-  } else if (empty($pwd)){
+  } else if (empty($password)){
     header("location: ../login.php?error=invalidpassword");
   } else{
     // hashing pass
-    $password = md5($pwd);
+    $password = md5($password);
     //echo $password;
     $sql = "SELECT * FROM users WHERE name='$name'";
     $result = mysqli_query($conn, $sql);
@@ -37,12 +37,27 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["pwd"]) && i
     if (mysqli_num_rows($result) === 1) {
          // the user name must be unique
          $row = mysqli_fetch_assoc($result);
-         echo "<pre>";
-         print_r($row);
+         if ($row['name'] === $name && $row['email'] === $email) {
+        		$_SESSION['name'] = $row['name'];
+        		$_SESSION['email'] = $row['email'];
+        		$_SESSION['role'] = $row['role'];
+            if ($_SESSION['role'] == 'teacher'){
+              header("Location: ../teacher.php");
+            } else if($_SESSION['role'] == 'student'){
+              header("Location: ../student.php");
+            }
 
-         }
+
+          }
+          else {
+          		header("Location: ../index.php?error=Incorect User name or password");
+
+          	}
+        }
+
+
+  	}
+
+  }else {
+  	header("Location: ../index.php");
   }
-
-}else {
-  header("location: ../login.php");
-}
