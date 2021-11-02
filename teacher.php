@@ -3,13 +3,16 @@ session_start();
   include 'header.php';
   include 'includes/database-inc.php';
 ?>
-<!DOCTYPE html>
 <html>
 <title>Teacher</title>
+<form action="includes/teacher-inc.php" method="post">
   <h2 class = "coursetitle"> Enter a new Course </h2>
       <input  type="text" name="coursename" placeholder="Course name..."><br>
+
+      <h2 class = "coursetitle"> Enter Student Name </h2>
+          <input  type="text" name="studentname" placeholder="Student name..."><br>
       <div class="studentable">
-        <h2 class="stud ">Students</h2>
+        <h2 class="stud ">Students Names</h2>
         <table class="table">
           <thead>
             <tr>
@@ -34,10 +37,13 @@ session_start();
           <?php
           }
           ?>
-          <?php
+
+        <?php
           }
           ?>
       </table>
     </div>
-      <button type="submit" name="submit">Submit</button>
+      <button class ="tbutton" type="submit" name="submit">Submit</button>
+
+    </form>
 </html>

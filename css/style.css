@@ -97,3 +97,18 @@ h1, h2, h3, p{
   padding-top: 10px;
  padding-bottom: 10px;
 }
+
+.tbutton{
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  opacity: 0.9;
+}
+
+.table{
+  padding-right: 10px;
+}

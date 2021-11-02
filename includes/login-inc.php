@@ -41,13 +41,13 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])
         		$_SESSION['name'] = $row['name'];
         		$_SESSION['email'] = $row['email'];
         		$_SESSION['role'] = $row['role'];
+
+
             if ($_SESSION['role'] == 'teacher'){
               header("Location: ../teacher.php");
             } else if($_SESSION['role'] == 'student'){
               header("Location: ../student.php");
             }
-
-
           }
           else {
           		header("Location: ../index.php?error=Incorect User name or password");

@@ -12,7 +12,7 @@
     <div class="header">
       <div class= "inner_header">
         <div class= "logo_container">
-          <h1> Test Site </h1>
+          <h1> School Login </h1>
         </div>
 
         <ul class= "navigation">

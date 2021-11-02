@@ -1,9 +1,12 @@
 <?php
+session_start();
+  include 'database-inc.php';
 
-if($_SESSION['role'] == 'student') {
-
-    $sql = "SELECT * FROM users ORDER BY id ASC";
-    $res = mysqli_query($conn, $sql);
-}else{
-	header("Location: index.php");
+  $sql = "SELECT course FROM teachers";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  while($rows=mysqli_fetch_assoc($result)) {
+    if ($SESSION['name'] == $_POST['$studentname']){
+    echo $coursename;
+    }
 }
