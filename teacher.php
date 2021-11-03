@@ -4,6 +4,7 @@ session_start();
   include 'includes/database-inc.php';
 ?>
 <html>
+  <section class= "teacherpage">
 <title>Teacher</title>
 <form action="includes/teacher-inc.php" method="post">
   <h2 class = "coursetitle"> Enter a new Course </h2>
@@ -16,9 +17,9 @@ session_start();
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">email</th>
-              <th scope="col">Role</th>
+              <th class=namet scope="col">Name</th>
+              <th class=emailt scope="col">email</th>
+              <th class=rolet scope="col">Role</th>
             </tr>
           </thead>
           <?php
@@ -30,9 +31,9 @@ session_start();
           if($rows['role'] == 'student') {
             ?>
           <tr>
-              <td><?php echo $rows['name']; ?></td>
-              <td><?php echo $rows['email']; ?></td>
-              <td><?php echo $rows['role']; ?></td>
+              <td class=namet><?php echo $rows['name']; ?></td>
+              <td class=emailt><?php echo $rows['email']; ?></td>
+              <td class=rolet><?php echo $rows['role']; ?></td>
           </tr>
           <?php
           }
@@ -46,4 +47,5 @@ session_start();
       <button class ="tbutton" type="submit" name="submit">Submit</button>
 
     </form>
+  </section>
 </html>

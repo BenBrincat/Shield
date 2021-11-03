@@ -22,7 +22,6 @@
 		          aria-label="Default select example">
 			  <option selected value="teacher">Teacher</option>
         <option selected value="student">Student</option>
-			  <option value="admin">Admin</option>
 		  </select>
         <button class ="button" type="submit" name="submit">Log In</button>
       </form>

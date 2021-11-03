@@ -41,6 +41,7 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])
         		$_SESSION['name'] = $row['name'];
         		$_SESSION['email'] = $row['email'];
         		$_SESSION['role'] = $row['role'];
+            $_SESSION['password'] = $row['password'];
 
 
             if ($_SESSION['role'] == 'teacher'){

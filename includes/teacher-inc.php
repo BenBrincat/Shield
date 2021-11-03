@@ -20,7 +20,7 @@ if (isset($_POST["coursename"]) && isset($_POST["studentname"]))
     $sql = "INSERT INTO teacher(course, students) VALUES('$coursename', '$studentname')";
     $result = mysqli_query($conn, $sql);
     if($result){
-      echo "good";
+      echo "Course has been uploaded";
     } else if (!$result) {
     	die ('error ' . mysqli_error($conn));
     	//exit();

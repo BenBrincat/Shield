@@ -2,4 +2,4 @@
   include_once 'header.php';
 ?>
 
-<h1> Test </h1>
+<h1 class="maintext"> Please Login </h1>
